@@ -1,3 +1,1 @@
 # Janggi
-# Janggi
-# Janggi
