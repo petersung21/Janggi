@@ -2,6 +2,7 @@
 #define TILE_H
 
 #include <QLabel>
+#include <QMessageBox>
 #include <QDebug>
 
 class Tile: public QLabel

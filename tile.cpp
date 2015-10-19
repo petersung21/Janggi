@@ -4,7 +4,7 @@
 
 validation *valid = new validation();
 
-extern int count,turn;
+extern int count,turn, bPieces, wPieces;
 extern QWidget *myWidget;
 extern Tile *click1;
 extern Tile *tile[4][3];
@@ -84,13 +84,37 @@ void validate(Tile *temp, int c)
         }
         else
         {
-            //qDebug()<<"Rascel, clicking anywhere";
+            //Where you clicking?
             count=0;
         }
     }
 
     else
     {
+        /*if (temp->piece)
+        {
+            if (click1->pieceColor)
+            {
+                bPieces--;
+            }
+            else
+            {
+                wPieces--;
+            }
+        }*/
+
+        /*if (bPieces == 0 || temp->pieceName == 'K')
+        {
+            QMessageBox msgBox;
+            msgBox.setText("Player 1 wins!");
+            msgBox.exec();
+        }
+        if (wPieces == 0 || temp->pieceName == 'K')
+        {
+            QMessageBox msgBox;
+            msgBox.setText("Player 2 wins!");
+            msgBox.exec();
+        }*/
 
         if(temp->tileNum==click1->tileNum)
         {
@@ -100,12 +124,25 @@ void validate(Tile *temp, int c)
             count=0;
         }
 
+
         for(i=0;i<max;i++)
         {
             if(temp->tileNum==exp[i])
             {
                 click1->piece=0;
                 temp->piece=1;
+//                if (bPieces == 0 || temp->pieceName == 'K')
+//                {
+//                    QMessageBox msgBox;
+//                    msgBox.setText("Player 1 wins!");
+//                    msgBox.exec();
+//                }
+//                if (wPieces == 0 || temp->pieceName == 'K')
+//                {
+//                    QMessageBox msgBox;
+//                    msgBox.setText("Player 2 wins!");
+//                    msgBox.exec();
+//                }
 
                 temp->pieceColor=click1->pieceColor;
                 temp->pieceName=click1->pieceName;
@@ -126,6 +163,7 @@ void validate(Tile *temp, int c)
 
                 disOrange();
 
+
                 max=0;
 
                 turn=(turn+1)%2;
@@ -135,6 +173,8 @@ void validate(Tile *temp, int c)
             else
                 count=1;
         }
+
+
     }
 }
 

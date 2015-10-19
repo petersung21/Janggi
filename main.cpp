@@ -2,7 +2,7 @@
 #include <QApplication>
 #include "tile.h"
 
-int count=0,turn=1,exp[60],max=0;
+int count=0,turn=1,exp[60],max=0, bPieces=4, wPieces=4;
 int wR,wC,bR,bC;
 Tile *click1;
 
@@ -52,7 +52,7 @@ void accessories(QWidget *baseWidget)
     player2->setGeometry(100,100,100,100);
     player2->setPixmap(QPixmap(":/Images/profile.png"));
 
-    moves->setGeometry(1000,105,250,550);
+    moves->setGeometry(900,100,400,550);
     moves->setStyleSheet("background: rgb(211, 211, 158);");
 }
 
