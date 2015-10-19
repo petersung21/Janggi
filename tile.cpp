@@ -23,17 +23,18 @@ void Tile::display(char elem)
 
     if(this->pieceColor && this->piece)
     {
+
         switch(elem)
         {
-            case 'R': this->setPixmap(QPixmap(":/Images/rook_white.svg"));
+            case 'R': this->setPixmap(QPixmap(":/Images/rook_white.svg").scaled(124,124,Qt::IgnoreAspectRatio,Qt::FastTransformation));
                       break;
-            case 'H': this->setPixmap(QPixmap(":/Images/knight_white.svg"));
+            case 'H': this->setPixmap(QPixmap(":/Images/knight_white.svg").scaled(124,124,Qt::IgnoreAspectRatio,Qt::FastTransformation));
                       break;
-            case 'K': this->setPixmap(QPixmap(":/Images/king_white.svg"));
+            case 'K': this->setPixmap(QPixmap(":/Images/king_white.svg").scaled(124,124,Qt::IgnoreAspectRatio,Qt::FastTransformation));
                       break;
-            case 'B': this->setPixmap(QPixmap(":/Images/bishop_white.svg"));
+            case 'B': this->setPixmap(QPixmap(":/Images/bishop_white.svg").scaled(124,124,Qt::IgnoreAspectRatio,Qt::FastTransformation));
                       break;  
-            case 'Q': this->setPixmap(QPixmap(":/Images/queen_white.svg"));
+            case 'Q': this->setPixmap(QPixmap(":/Images/queen_white.svg").scaled(124,124,Qt::IgnoreAspectRatio,Qt::FastTransformation));
                     break;
         }
     }
@@ -42,15 +43,15 @@ void Tile::display(char elem)
     {
         switch(elem)
         {
-        case 'R': this->setPixmap(QPixmap(":/Images/rook_black.svg"));
+        case 'R': this->setPixmap(QPixmap(":/Images/rook_black.svg").scaled(124,124,Qt::IgnoreAspectRatio,Qt::FastTransformation));
                   break;
-        case 'H': this->setPixmap(QPixmap(":/Images/knight_black.svg"));
+        case 'H': this->setPixmap(QPixmap(":/Images/knight_black.svg").scaled(124,124,Qt::IgnoreAspectRatio,Qt::FastTransformation));
                   break;
-        case 'K': this->setPixmap(QPixmap(":/Images/king_black.svg"));
+        case 'K': this->setPixmap(QPixmap(":/Images/king_black.svg").scaled(124,124,Qt::IgnoreAspectRatio,Qt::FastTransformation));
                   break;
-        case 'B': this->setPixmap(QPixmap(":/Images/bishop_black.svg"));
+        case 'B': this->setPixmap(QPixmap(":/Images/bishop_black.svg").scaled(124,124,Qt::IgnoreAspectRatio,Qt::FastTransformation));
                   break;
-        case 'Q': this->setPixmap(QPixmap(":/Images/queen_black.svg"));
+        case 'Q': this->setPixmap(QPixmap(":/Images/queen_black.svg").scaled(124,124,Qt::IgnoreAspectRatio,Qt::FastTransformation));
                   break;
         }
     }
