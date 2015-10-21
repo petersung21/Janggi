@@ -507,7 +507,7 @@ int validation::check(Tile *temp)
 void validation::orange()
 {
     for(int i=0;i<max;i++)
-        tile[exp[i]/3][exp[i]%3]->setStyleSheet("QLabel {background: orange;}");
+        tile[exp[i]/3][exp[i]%3]->setStyleSheet("QLabel {background: orange; border:1px solid red}");
 }
 
 

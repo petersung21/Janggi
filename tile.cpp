@@ -73,7 +73,7 @@ void validate(Tile *temp, int c)
             if(retValue)
             {
                 click1= new Tile();
-                temp->setStyleSheet("QLabel {background: green;}");
+                temp->setStyleSheet("QLabel {background: green; border:1px solid red}");
                 click1=temp;
             }
             else
@@ -103,18 +103,7 @@ void validate(Tile *temp, int c)
             }
         }*/
 
-        /*if (bPieces == 0 || temp->pieceName == 'K')
-        {
-            QMessageBox msgBox;
-            msgBox.setText("Player 1 wins!");
-            msgBox.exec();
-        }
-        if (wPieces == 0 || temp->pieceName == 'K')
-        {
-            QMessageBox msgBox;
-            msgBox.setText("Player 2 wins!");
-            msgBox.exec();
-        }*/
+
 
         if(temp->tileNum==click1->tileNum)
         {
@@ -131,18 +120,41 @@ void validate(Tile *temp, int c)
             {
                 click1->piece=0;
                 temp->piece=1;
-//                if (bPieces == 0 || temp->pieceName == 'K')
-//                {
-//                    QMessageBox msgBox;
-//                    msgBox.setText("Player 1 wins!");
-//                    msgBox.exec();
-//                }
-//                if (wPieces == 0 || temp->pieceName == 'K')
-//                {
-//                    QMessageBox msgBox;
-//                    msgBox.setText("Player 2 wins!");
-//                    msgBox.exec();
-//                }
+                if (temp->pieceName == 'K' && click1->pieceColor != temp->pieceColor && click1->pieceColor)
+                {
+                    QMessageBox msgBox;
+                    msgBox.setText("Player 1 wins!");
+                    msgBox.setInformativeText("Do you want to play again?");
+                    msgBox.setStandardButtons(QMessageBox::Yes);
+                    msgBox.setDefaultButton(QMessageBox::Yes);
+                    int ret = msgBox.exec();
+                    switch (ret)
+                    {
+                        case QMessageBox::Yes:
+
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                if (temp->pieceName == 'K' && click1->pieceColor != temp->pieceColor && !click1->pieceColor)
+                {
+                    QMessageBox msgBox;
+                    msgBox.setText("Player 2 wins!");
+                    msgBox.setInformativeText("Do you want to play again?");
+                    msgBox.setStandardButtons(QMessageBox::Yes);
+                    msgBox.setDefaultButton(QMessageBox::Yes);
+                    int ret = msgBox.exec();
+                    switch (ret)
+                    {
+                        case QMessageBox::Yes:
+                            //main Main = new main();
+                            //Main.chessBoard();
+                            break;
+                        default:
+                            break;
+                    }
+                }
 
                 temp->pieceColor=click1->pieceColor;
                 temp->pieceName=click1->pieceName;
